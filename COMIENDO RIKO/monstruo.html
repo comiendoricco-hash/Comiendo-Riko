@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>El Monstruo del Sabor | Comiendo Riko</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/style.monstruo.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="contenedor header-contenido">
+
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Logo Comiendo Riko">
+            </a>
+
+            <nav class="navegacion">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="monstruo.html" class="activo">Monstruo del sabor</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+
+            <a href="carrito.html" class="boton-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Mi carrito
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero-monstruo">
+
+        <div class="contenedor hero-contenido">
+
+            <div class="hero-texto">
+                <span class="etiqueta">COMIENDO RIKO PRESENTA</span>
+
+                <h1>
+                    TÚ CREAS EL
+                    <span>MONSTRUO DEL SABOR</span>
+                </h1>
+
+                <p>
+                    No tienes que conformarte con una hamburguesa común.
+                    Combina ingredientes, agrega extras, crea tu propia receta
+                    y ponle un nombre que represente tu sabor.
+                </p>
+
+                <a href="#crear" class="boton-principal">
+                    CREAR MI HAMBURGUESA
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="hero-datos">
+                    <div>
+                        <i class="fa-solid fa-burger"></i>
+                        <span>Tu receta</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-fire"></i>
+                        <span>Tu combinación</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-star"></i>
+                        <span>Tu creación</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-imagen">
+                <div class="circulo-rojo"></div>
+
+                <img
+                    src="img/mounstro.png"
+                    alt="Hamburguesa Monstruo del Sabor"
+                    onerror="this.style.display='none';">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROPUESTA -->
+    <section class="propuesta">
+        <div class="contenedor propuesta-contenido">
+
+            <span class="etiqueta">MÁS QUE UNA HAMBURGUESA</span>
+
+            <h2>NO SOLO COMES, <span>CREAS.</span></h2>
+
+            <p>
+                En Comiendo Riko, tu imaginación también hace parte del menú.
+                Elige tus ingredientes favoritos, aumenta las cantidades de
+                tus extras y descubre cuánto cuesta tu creación.
+            </p>
+
+            <div class="propuesta-tarjetas">
+
+                <article class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <i class="fa-solid fa-hand-pointer"></i>
+                    </div>
+                    <h3>ELIGE</h3>
+                    <p>Selecciona los ingredientes que más te gustan.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>COMBINA</h3>
+                    <p>Agrega queso, tocineta, doble carne y mucho más.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <h3>NOMBRA</h3>
+                    <p>Ponle un nombre original a tu monstruo del sabor.</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONSTRUCTOR -->
+    <section class="crear" id="crear">
+
+        <div class="contenedor">
+
+            <div class="titulo-seccion">
+                <span class="etiqueta">TU HAMBRE, TUS REGLAS</span>
+
+                <h2>ARMA TU <span>MONSTRUO</span></h2>
+
+                <p>
+                    Cada ingrediente adicional tiene un precio.
+                    El total se actualiza automáticamente mientras creas.
+                </p>
+            </div>
+
+
+            <div class="constructor-monstruo">
+
+                <!-- PANEL DE INGREDIENTES -->
+                <div class="panel-ingredientes">
+
+                    <div class="encabezado-panel">
+                        <div>
+                            <span class="etiqueta">PASO 1</span>
+                            <h3>Escoge tus ingredientes</h3>
+                        </div>
+
+                        <i class="fa-solid fa-burger"></i>
+                    </div>
+
+                    <p class="texto-constructor">
+                        Tu hamburguesa incluye pan, carne, lechuga, tomate,
+                        cebolla tradicional y salsa de la casa.
+                        Los siguientes ingredientes son adicionales.
+                    </p>
+
+
+                    <!-- CARNES -->
+                    <div class="grupo-ingredientes">
+                        <h4><i class="fa-solid fa-fire"></i> CARNES Y PROTEÍNAS</h4>
+
+                        <div class="ingredientes-grid">
+
+                            <button type="button" class="ingrediente"
+                                data-id="dobleCarne"
+                                data-nombre="Carne adicional"
+                                data-precio="4000">
+                                <span class="ingrediente-icono">🥩</span>
+                                <span>Carne adicional</span>
+                                <small>+$4.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="pollo"
+                                data-nombre="Pollo crocante"
+                                data-precio="4000">
+                                <span class="ingrediente-icono">🍗</span>
+                                <span>Pollo crocante</span>
+                                <small>+$4.000</small>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- QUESOS Y EXTRAS -->
+                    <div class="grupo-ingredientes">
+                        <h4><i class="fa-solid fa-cheese"></i> QUESOS Y EXTRAS</h4>
+
+                        <div class="ingredientes-grid">
+
+                            <button type="button" class="ingrediente"
+                                data-id="cheddar"
+                                data-nombre="Queso cheddar extra"
+                                data-precio="1500">
+                                <span class="ingrediente-icono">🧀</span>
+                                <span>Cheddar extra</span>
+                                <small>+$1.500</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="mozzarella"
+                                data-nombre="Queso mozzarella extra"
+                                data-precio="2000">
+                                <span class="ingrediente-icono">🧀</span>
+                                <span>Mozzarella extra</span>
+                                <small>+$2.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="tocineta"
+                                data-nombre="Tocineta extra"
+                                data-precio="2500">
+                                <span class="ingrediente-icono">🥓</span>
+                                <span>Tocineta</span>
+                                <small>+$2.500</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="aros"
+                                data-nombre="Aros de cebolla"
+                                data-precio="2500">
+                                <span class="ingrediente-icono">🧅</span>
+                                <span>Aros de cebolla</span>
+                                <small>+$2.500</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="nachos"
+                                data-nombre="Nachos crocantes"
+                                data-precio="2000">
+                                <span class="ingrediente-icono">🌮</span>
+                                <span>Nachos crocantes</span>
+                                <small>+$2.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="huevo"
+                                data-nombre="Huevo"
+                                data-precio="1500">
+                                <span class="ingrediente-icono">🍳</span>
+                                <span>Huevo</span>
+                                <small>+$1.500</small>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- VEGETALES -->
+                    <div class="grupo-ingredientes">
+                        <h4><i class="fa-solid fa-leaf"></i> VEGETALES Y SABORES</h4>
+
+                        <div class="ingredientes-grid">
+
+                            <button type="button" class="ingrediente"
+                                data-id="jalapenos"
+                                data-nombre="Jalapeños"
+                                data-precio="1000">
+                                <span class="ingrediente-icono">🌶️</span>
+                                <span>Jalapeños</span>
+                                <small>+$1.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="champiñones"
+                                data-nombre="Champiñones"
+                                data-precio="2000">
+                                <span class="ingrediente-icono">🍄</span>
+                                <span>Champiñones</span>
+                                <small>+$2.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="pepinillos"
+                                data-nombre="Pepinillos"
+                                data-precio="1000">
+                                <span class="ingrediente-icono">🥒</span>
+                                <span>Pepinillos</span>
+                                <small>+$1.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="pina"
+                                data-nombre="Piña caramelizada"
+                                data-precio="1500">
+                                <span class="ingrediente-icono">🍍</span>
+                                <span>Piña caramelizada</span>
+                                <small>+$1.500</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="cebollaCaramelizada"
+                                data-nombre="Cebolla caramelizada"
+                                data-precio="1500">
+                                <span class="ingrediente-icono">🧅</span>
+                                <span>Cebolla caramelizada</span>
+                                <small>+$1.500</small>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- SALSAS -->
+                    <div class="grupo-ingredientes">
+                        <h4><i class="fa-solid fa-bottle-droplet"></i> SALSAS</h4>
+
+                        <div class="ingredientes-grid">
+
+                            <button type="button" class="ingrediente"
+                                data-id="bbq"
+                                data-nombre="Salsa BBQ extra"
+                                data-precio="1000">
+                                <span class="ingrediente-icono">🍖</span>
+                                <span>Salsa BBQ</span>
+                                <small>+$1.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="salsaAjo"
+                                data-nombre="Salsa de ajo extra"
+                                data-precio="1000">
+                                <span class="ingrediente-icono">🥣</span>
+                                <span>Salsa de ajo</span>
+                                <small>+$1.000</small>
+                            </button>
+
+                            <button type="button" class="ingrediente"
+                                data-id="picante"
+                                data-nombre="Salsa picante extra"
+                                data-precio="1000">
+                                <span class="ingrediente-icono">🌶️</span>
+                                <span>Salsa picante</span>
+                                <small>+$1.000</small>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <p class="nota-ingredientes">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Puedes pulsar varias veces un ingrediente para agregar
+                        más unidades. Usa los botones + y − del resumen para
+                        ajustar las cantidades.
+                    </p>
+
+                </div>
+
+
+                <!-- VISTA PREVIA Y RESUMEN -->
+                <aside class="panel-preview">
+
+                    <div class="encabezado-panel">
+                        <div>
+                            <span class="etiqueta">PASO 2</span>
+                            <h3>Tu creación</h3>
+                        </div>
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div class="preview-hamburguesa">
+
+                        <span class="preview-etiqueta">VISTA PREVIA</span>
+
+                        <div class="hamburguesa-constructor">
+
+                            <div class="pan-superior"></div>
+
+                            <div id="ingredientesHamburguesa">
+                                <div class="ingrediente-visual ingrediente-base-salsa"></div>
+                                <div class="ingrediente-visual ingrediente-base-lechuga"></div>
+                                <div class="ingrediente-visual ingrediente-base-tomate"></div>
+                                <div class="ingrediente-visual ingrediente-base-cebolla"></div>
+                                <div class="ingrediente-visual ingrediente-base-carne"></div>
+                            </div>
+
+                            <div class="pan-inferior"></div>
+
+                        </div>
+
+                        <h3 id="tituloMonstruo">Mi Monstruo</h3>
+
+                        <p id="mensajeMonstruo">
+                            ¡Una combinación brutal!
+                        </p>
+
+                    </div>
+
+
+                    <label class="label-nombre" for="nombreMonstruo">
+                        PASO 3: PONLE UN NOMBRE
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreMonstruo"
+                        maxlength="45"
+                        placeholder="Ej. La Bestia Explosiva"
+                        autocomplete="off">
+
+
+                    <div class="resumen-monstruo">
+
+                        <h4>
+                            <i class="fa-solid fa-list-check"></i>
+                            RESUMEN DE TU HAMBURGUESA
+                        </h4>
+
+                        <p class="ingredientes-incluidos">
+                            Incluye: pan, carne, lechuga, tomate, cebolla
+                            tradicional y salsa de la casa.
+                        </p>
+
+                        <div id="listaResumen">
+                            <p class="resumen-vacio">
+                                Todavía no has agregado ingredientes extra.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="precio-monstruo">
+                        <span>PRECIO TOTAL</span>
+                        <strong id="precioMonstruo">$15.000</strong>
+                    </div>
+
+                    <button type="button" id="agregarMonstruo" class="boton-agregar">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        AGREGAR AL CARRITO
+                    </button>
+
+                    <p id="avisoMonstruo" class="aviso-monstruo" role="status"
+                        aria-live="polite"></p>
+
+                    <a href="productos.html" class="volver-menu">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al menú
+                    </a>
+
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CIERRE -->
+    <section class="cierre-monstruo">
+        <div class="contenedor">
+            <span class="etiqueta">COMIENDO RIKO</span>
+
+            <h2>EL SABOR LO DECIDES <span>TÚ.</span></h2>
+
+            <p>
+                Imagina la combinación. Crea tu monstruo. Disfruta cada mordisco.
+            </p>
+
+            <a href="#crear" class="boton-principal">
+                CREAR MI MONSTRUO
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="contenedor footer-contenido">
+
+            <a href="index.html" class="footer-logo">
+                <img src="img/logo.png" alt="Comiendo Riko">
+            </a>
+
+            <div class="footer-texto">
+                <h3>COMIENDO RIKO</h3>
+                <p>Comida brutal, sabores que enamoran.</p>
+                <p class="footer-slogan">Tú creas el monstruo del sabor.</p>
+            </div>
+
+            <div class="footer-enlaces">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="carrito.html">Mi carrito</a>
+            </div>
+
+        </div>
+
+        <div class="footer-final">
+            <p>© 2026 Comiendo Riko. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- FUNCIONAMIENTO DEL CONSTRUCTOR -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const PRECIO_BASE = 15000;
+            const IMAGEN = "img/mounstro.png";
+            const CLAVE_CARRITO = "carritoComiendoRiko";
+
+            const botonesIngredientes = document.querySelectorAll(".ingrediente");
+            const nombreInput = document.getElementById("nombreMonstruo");
+            const tituloMonstruo = document.getElementById("tituloMonstruo");
+            const mensajeMonstruo = document.getElementById("mensajeMonstruo");
+            const listaResumen = document.getElementById("listaResumen");
+            const precioMonstruo = document.getElementById("precioMonstruo");
+            const ingredientesHamburguesa = document.getElementById("ingredientesHamburguesa");
+            const botonAgregar = document.getElementById("agregarMonstruo");
+            const aviso = document.getElementById("avisoMonstruo");
+
+            // Cada ingrediente guarda su cantidad, precio e información.
+            const seleccionados = {};
+
+            const formatoPrecio = new Intl.NumberFormat("es-CO", {
+                style: "currency",
+                currency: "COP",
+                maximumFractionDigits: 0
+            });
+
+            function dinero(valor) {
+                return formatoPrecio.format(valor).replace(/\u00a0/g, " ");
+            }
+
+            function nombrePersonalizado() {
+                return nombreInput.value.trim() || "Mi Monstruo";
+            }
+
+            function calcularTotal() {
+                let total = PRECIO_BASE;
+
+                Object.values(seleccionados).forEach(function (ingrediente) {
+                    total += ingrediente.precio * ingrediente.cantidad;
+                });
+
+                return total;
+            }
+
+            function totalExtras() {
+                return Object.values(seleccionados).reduce(function (total, ingrediente) {
+                    return total + ingrediente.cantidad;
+                }, 0);
+            }
+
+            function crearElemento(tag, clase, texto) {
+                const elemento = document.createElement(tag);
+
+                if (clase) {
+                    elemento.className = clase;
+                }
+
+                if (texto !== undefined) {
+                    elemento.textContent = texto;
+                }
+
+                return elemento;
+            }
+
+            function actualizarNombre() {
+                tituloMonstruo.textContent = nombrePersonalizado();
+
+                mensajeMonstruo.textContent = nombreInput.value.trim()
+                    ? "¡Tu creación está tomando forma!"
+                    : "¡Una combinación brutal!";
+            }
+
+            function actualizarVistaPrevia() {
+                ingredientesHamburguesa.innerHTML = "";
+
+                const capasBase = [
+                    { clase: "ingrediente-base-salsa", cantidad: 1 },
+                    { clase: "ingrediente-base-lechuga", cantidad: 1 },
+                    { clase: "ingrediente-base-tomate", cantidad: 1 },
+                    { clase: "ingrediente-base-cebolla", cantidad: 1 },
+                    { clase: "ingrediente-base-carne", cantidad: 1 }
+                ];
+
+                capasBase.forEach(function (capa) {
+                    for (let i = 0; i < capa.cantidad; i++) {
+                        ingredientesHamburguesa.appendChild(
+                            crearElemento("div", "ingrediente-visual " + capa.clase)
+                        );
+                    }
+                });
+
+                const ordenVisual = [
+                    "dobleCarne", "pollo", "cheddar", "mozzarella",
+                    "tocineta", "aros", "nachos", "huevo", "jalapenos",
+                    "champiñones", "pepinillos", "pina", "cebollaCaramelizada",
+                    "bbq", "salsaAjo", "picante"
+                ];
+
+                ordenVisual.forEach(function (id) {
+                    const ingrediente = seleccionados[id];
+
+                    if (!ingrediente) return;
+
+                    for (let i = 0; i < ingrediente.cantidad; i++) {
+                        let claseVisual = "ingrediente-" + id;
+
+                        if (id === "dobleCarne") {
+                            claseVisual = "ingrediente-carne";
+                        }
+
+                        ingredientesHamburguesa.appendChild(
+                            crearElemento("div", "ingrediente-visual " + claseVisual)
+                        );
+                    }
+                });
+            }
+
+            function actualizarResumen() {
+                listaResumen.innerHTML = "";
+
+                const ids = Object.keys(seleccionados);
+
+                if (ids.length === 0) {
+                    const vacio = crearElemento(
+                        "p",
+                        "resumen-vacio",
+                        "Todavía no has agregado ingredientes extra."
+                    );
+
+                    listaResumen.appendChild(vacio);
+                } else {
+                    ids.forEach(function (id) {
+                        const ingrediente = seleccionados[id];
+
+                        const fila = crearElemento("div", "fila-resumen");
+                        const datos = crearElemento("div", "resumen-datos");
+
+                        datos.appendChild(
+                            crearElemento("strong", "", ingrediente.nombre)
+                        );
+
+                        datos.appendChild(
+                            crearElemento(
+                                "small",
+                                "",
+                                dinero(ingrediente.precio) + " por unidad"
+                            )
+                        );
+
+                        const controles = crearElemento("div", "controles-cantidad");
+
+                        const botonMenos = crearElemento("button", "", "−");
+                        botonMenos.type = "button";
+                        botonMenos.setAttribute("aria-label", "Quitar una unidad de " + ingrediente.nombre);
+
+                        botonMenos.addEventListener("click", function () {
+                            cambiarCantidad(id, -1);
+                        });
+
+                        const cantidad = crearElemento("span", "", String(ingrediente.cantidad));
+
+                        const botonMas = crearElemento("button", "", "+");
+                        botonMas.type = "button";
+                        botonMas.setAttribute("aria-label", "Agregar una unidad de " + ingrediente.nombre);
+
+                        botonMas.addEventListener("click", function () {
+                            cambiarCantidad(id, 1);
+                        });
+
+                        controles.appendChild(botonMenos);
+                        controles.appendChild(cantidad);
+                        controles.appendChild(botonMas);
+
+                        const subtotal = crearElemento(
+                            "p",
+                            "resumen-subtotal",
+                            "Subtotal: " + dinero(ingrediente.precio * ingrediente.cantidad)
+                        );
+
+                        fila.appendChild(datos);
+                        fila.appendChild(controles);
+                        fila.appendChild(subtotal);
+
+                        listaResumen.appendChild(fila);
+                    });
+                }
+
+                precioMonstruo.textContent = dinero(calcularTotal());
+                actualizarVistaPrevia();
+            }
+
+            function actualizarBotones() {
+                botonesIngredientes.forEach(function (boton) {
+                    const id = boton.dataset.id;
+                    const ingrediente = seleccionados[id];
+
+                    boton.classList.toggle("seleccionado", Boolean(ingrediente));
+
+                    const contadorExistente = boton.querySelector(".contador-ingrediente");
+
+                    if (contadorExistente) {
+                        contadorExistente.remove();
+                    }
+
+                    if (ingrediente) {
+                        const contador = crearElemento(
+                            "span",
+                            "contador-ingrediente",
+                            "Cantidad: " + ingrediente.cantidad
+                        );
+
+                        boton.appendChild(contador);
+                    }
+                });
+            }
+
+            function cambiarCantidad(id, cambio) {
+                if (!seleccionados[id]) return;
+
+                seleccionados[id].cantidad += cambio;
+
+                if (seleccionados[id].cantidad <= 0) {
+                    delete seleccionados[id];
+                }
+
+                actualizarBotones();
+                actualizarResumen();
+
+                aviso.textContent = "";
+            }
+
+            botonesIngredientes.forEach(function (boton) {
+                boton.addEventListener("click", function () {
+                    const id = boton.dataset.id;
+                    const nombre = boton.dataset.nombre;
+                    const precio = Number(boton.dataset.precio);
+
+                    if (!id || !nombre || !Number.isFinite(precio) || precio < 0) {
+                        aviso.textContent = "No se pudo agregar ese ingrediente.";
+                        return;
+                    }
+
+                    if (!seleccionados[id]) {
+                        seleccionados[id] = {
+                            id: id,
+                            nombre: nombre,
+                            precio: precio,
+                            cantidad: 1
+                        };
+                    } else {
+                        seleccionados[id].cantidad++;
+                    }
+
+                    actualizarBotones();
+                    actualizarResumen();
+
+                    aviso.textContent = nombre + " agregado a tu creación.";
+                });
+            });
+
+            nombreInput.addEventListener("input", actualizarNombre);
+
+            botonAgregar.addEventListener("click", function () {
+
+                const nombre = nombreInput.value.trim();
+
+                if (!nombre) {
+                    aviso.textContent = "Primero escribe un nombre para tu hamburguesa.";
+                    nombreInput.focus();
+                    return;
+                }
+
+                if (nombre.length > 45) {
+                    aviso.textContent = "El nombre no puede superar los 45 caracteres.";
+                    nombreInput.focus();
+                    return;
+                }
+
+                botonAgregar.disabled = true;
+                aviso.textContent = "Agregando tu creación al carrito...";
+
+                try {
+                    let carrito = [];
+
+                    const carritoGuardado = localStorage.getItem(CLAVE_CARRITO);
+
+                    if (carritoGuardado) {
+                        const datos = JSON.parse(carritoGuardado);
+
+                        if (!Array.isArray(datos)) {
+                            throw new Error("El carrito guardado no tiene el formato esperado.");
+                        }
+
+                        carrito = datos;
+                    }
+
+                    const extras = Object.values(seleccionados).map(function (ingrediente) {
+                        return ingrediente.nombre + " x" + ingrediente.cantidad;
+                    });
+
+                    const descripcion = [
+                        "Hamburguesa personalizada: " + nombre,
+                        "Incluye pan, carne, lechuga, tomate, cebolla tradicional y salsa de la casa.",
+                        extras.length
+                            ? "Extras: " + extras.join(", ")
+                            : "Sin ingredientes adicionales."
+                    ].join(" ");
+
+                    const producto = {
+                        nombre: "Monstruo del Sabor: " + nombre,
+                        precio: calcularTotal(),
+                        imagen: IMAGEN,
+                        categoria: "MONSTRUO DEL SABOR",
+                        descripcion: descripcion,
+                        cantidad: 1
+                    };
+
+                    // Cada receta personalizada se agrega como un producto independiente.
+                    carrito.push(producto);
+
+                    localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
+
+                    aviso.textContent = "¡Tu monstruo está listo! Abriendo el carrito...";
+
+                    window.location.href = "carrito.html";
+
+                } catch (error) {
+                    console.error("Error al guardar el Monstruo del Sabor:", error);
+
+                    aviso.textContent =
+                        "No se pudo guardar tu hamburguesa. Revisa el almacenamiento del navegador e inténtalo nuevamente.";
+
+                    botonAgregar.disabled = false;
+                }
+            });
+
+            actualizarNombre();
+            actualizarResumen();
+            actualizarBotones();
+
+        });
+    </script>
+
+</body>
+</html>

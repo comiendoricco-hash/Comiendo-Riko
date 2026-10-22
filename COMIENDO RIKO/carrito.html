@@ -1,0 +1,378 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Pedido | Comiendo Riko</title>
+
+    <!-- Favicon: logo de Comiendo Riko -->
+    <link rel="icon" href="./img/logo.png" type="image/png">
+
+    <!-- Estilos del carrito -->
+    <link rel="stylesheet" href="./css/style.carrito.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Comiendo Riko">
+                </a>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="monstruo.html">Monstruo del sabor</a>
+                <a href="nosotros.html">Nosotros</a>
+            </nav>
+
+            <a href="carrito.html" class="cart-button">
+                🛒 Mi pedido
+                <span id="cart-count">0</span>
+            </a>
+
+        </div>
+    </header>
+
+    <!-- PEDIDO -->
+    <main>
+        <section class="cart-section">
+
+            <div class="section-header">
+                <span>COMIENDO RIKO</span>
+                <h1>Mi pedido</h1>
+                <p>
+                    Aquí encontrarás los productos que has seleccionado.
+                </p>
+            </div>
+
+            <div class="cart-container">
+
+                <!-- PRODUCTOS -->
+                <div id="cart-items" class="cart-items"></div>
+
+                <!-- RESUMEN -->
+                <aside class="cart-summary">
+
+                    <h2>Resumen del pedido</h2>
+
+                    <div class="summary-line">
+                        <span>Productos</span>
+                        <strong id="summary-count">0</strong>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <strong id="cart-total">$0</strong>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="checkout-button"
+                        onclick="continuarPedido()">
+                        Continuar pedido
+                    </button>
+
+                    <a href="productos.html" class="continue-shopping">
+                        ← Seguir comprando
+                    </a>
+
+                </aside>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- JAVASCRIPT DEL CARRITO -->
+    <script>
+        // Número de WhatsApp de Comiendo Riko
+        // Colombia: indicativo 57 + número celular
+        const WHATSAPP = "573209833951";
+
+        // Recuperar los productos guardados
+        let carrito = [];
+
+        try {
+            carrito = JSON.parse(
+                localStorage.getItem("carritoComiendoRiko")
+            ) || [];
+
+            if (!Array.isArray(carrito)) {
+                carrito = [];
+            }
+        } catch (error) {
+            carrito = [];
+        }
+
+        // Formatear precios en pesos colombianos
+        function formatoPrecio(valor) {
+            return "$" + Number(valor || 0).toLocaleString("es-CO");
+        }
+
+        // Obtener valores seguros para los cálculos
+        function precioProducto(producto) {
+            return Math.max(0, Number(producto.precio) || 0);
+        }
+
+        function cantidadProducto(producto) {
+            return Math.max(0, Number(producto.cantidad) || 0);
+        }
+
+        // Dibujar el carrito
+        function mostrarCarrito() {
+            const contenedor = document.getElementById("cart-items");
+            const totalElemento = document.getElementById("cart-total");
+            const cantidadElemento = document.getElementById("summary-count");
+            const contador = document.getElementById("cart-count");
+
+            contenedor.innerHTML = "";
+
+            let totalPedido = 0;
+            let cantidadProductos = 0;
+
+            // Eliminar datos de productos inválidos
+            carrito = carrito.filter(producto =>
+                producto &&
+                typeof producto === "object" &&
+                cantidadProducto(producto) > 0
+            );
+
+            carrito.forEach((producto, index) => {
+                const precio = precioProducto(producto);
+                const cantidad = cantidadProducto(producto);
+
+                totalPedido += precio * cantidad;
+                cantidadProductos += cantidad;
+
+                const item = document.createElement("div");
+                item.className = "cart-item";
+
+                // Imagen del producto
+                const imagenContenedor = document.createElement("div");
+                imagenContenedor.className = "cart-image";
+
+                const imagen = document.createElement("img");
+                imagen.src = producto.imagen || "img/logo.png";
+                imagen.alt = producto.nombre || "Producto Comiendo Riko";
+
+                imagen.onerror = function () {
+                    this.onerror = null;
+                    this.src = "img/logo.png";
+                };
+
+                imagenContenedor.appendChild(imagen);
+
+                // Información del producto
+                const info = document.createElement("div");
+                info.className = "cart-info";
+
+                const categoria = document.createElement("span");
+                categoria.textContent = producto.categoria || "COMIENDO RIKO";
+
+                const nombre = document.createElement("h3");
+                nombre.textContent = producto.nombre || "Producto";
+
+                const descripcion = document.createElement("p");
+                descripcion.textContent = producto.descripcion || "";
+
+                const precioElemento = document.createElement("strong");
+                precioElemento.textContent = formatoPrecio(precio);
+
+                info.append(
+                    categoria,
+                    nombre,
+                    descripcion,
+                    precioElemento
+                );
+
+                // Controles de cantidad
+                const controles = document.createElement("div");
+                controles.className = "cart-controls";
+
+                const menos = document.createElement("button");
+                menos.type = "button";
+                menos.textContent = "−";
+                menos.setAttribute("aria-label", "Disminuir cantidad");
+                menos.onclick = () => cambiarCantidad(index, -1);
+
+                const cantidadTexto = document.createElement("span");
+                cantidadTexto.textContent = cantidad;
+
+                const mas = document.createElement("button");
+                mas.type = "button";
+                mas.textContent = "+";
+                mas.setAttribute("aria-label", "Aumentar cantidad");
+                mas.onclick = () => cambiarCantidad(index, 1);
+
+                const eliminar = document.createElement("button");
+                eliminar.type = "button";
+                eliminar.className = "delete-button";
+                eliminar.textContent = "Eliminar";
+                eliminar.onclick = () => eliminarProducto(index);
+
+                controles.append(
+                    menos,
+                    cantidadTexto,
+                    mas,
+                    eliminar
+                );
+
+                item.append(
+                    imagenContenedor,
+                    info,
+                    controles
+                );
+
+                contenedor.appendChild(item);
+            });
+
+            // Actualizar resumen
+            totalElemento.textContent = formatoPrecio(totalPedido);
+            cantidadElemento.textContent = cantidadProductos;
+            contador.textContent = cantidadProductos;
+
+            // Mensaje cuando el carrito está vacío
+            if (carrito.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-icon">🛒</div>
+                        <h2>Tu pedido está vacío</h2>
+                        <p>Todavía no has agregado ningún producto.</p>
+                        <a href="productos.html">Ver productos</a>
+                    </div>
+                `;
+            }
+
+            guardarCarrito();
+        }
+
+        // Guardar cambios sin perder los productos
+        function guardarCarrito() {
+            localStorage.setItem(
+                "carritoComiendoRiko",
+                JSON.stringify(carrito)
+            );
+        }
+
+        // Aumentar o disminuir cantidades
+        function cambiarCantidad(index, cambio) {
+            if (!carrito[index]) return;
+
+            carrito[index].cantidad =
+                cantidadProducto(carrito[index]) + cambio;
+
+            if (carrito[index].cantidad <= 0) {
+                carrito.splice(index, 1);
+            }
+
+            guardarCarrito();
+            mostrarCarrito();
+        }
+
+        // Eliminar un producto
+        function eliminarProducto(index) {
+            if (index < 0 || index >= carrito.length) return;
+
+            carrito.splice(index, 1);
+
+            guardarCarrito();
+            mostrarCarrito();
+        }
+
+        // CONTINUAR PEDIDO POR WHATSAPP
+        function continuarPedido() {
+            if (carrito.length === 0) {
+                alert(
+                    "Tu pedido está vacío. Agrega productos antes de continuar."
+                );
+                return;
+            }
+
+            let totalPedido = 0;
+            let cantidadProductos = 0;
+
+            const lineas = [
+                "¡Hola, Comiendo Riko! 🍔",
+                "",
+                "Quiero realizar el siguiente pedido:",
+                ""
+            ];
+
+            carrito.forEach((producto, index) => {
+                const nombre = producto.nombre || "Producto";
+                const cantidad = cantidadProducto(producto);
+                const precio = precioProducto(producto);
+                const subtotal = cantidad * precio;
+
+                totalPedido += subtotal;
+                cantidadProductos += cantidad;
+
+                // Nombre, cantidad y precio
+                lineas.push(
+                    `${index + 1}. ${nombre}`,
+                    `   Cantidad: ${cantidad}`
+                );
+
+                // INCLUIR INGREDIENTES Y EXTRAS PERSONALIZADOS
+                if (
+                    typeof producto.descripcion === "string" &&
+                    producto.descripcion.trim() !== ""
+                ) {
+                    lineas.push(
+                        `   Ingredientes y detalles: ${producto.descripcion}`
+                    );
+                }
+
+                // Precio unitario y subtotal
+                lineas.push(
+                    `   Precio unitario: ${formatoPrecio(precio)}`,
+                    `   Subtotal: ${formatoPrecio(subtotal)}`,
+                    ""
+                );
+            });
+
+            // Resumen final del pedido
+            lineas.push(
+                "--------------------------",
+                `Total de productos: ${cantidadProductos}`,
+                `TOTAL DEL PEDIDO: ${formatoPrecio(totalPedido)}`,
+                "--------------------------",
+                "",
+                "¿Me confirman la disponibilidad y cómo puedo realizar el pago?",
+                "",
+                "¡Gracias!"
+            );
+
+            // Codificar el mensaje para WhatsApp
+            const mensaje = encodeURIComponent(
+                lineas.join("\n")
+            );
+
+            const url =
+                `https://wa.me/${WHATSAPP}?text=${mensaje}`;
+
+            // Abrir WhatsApp con el pedido preparado
+            const ventana = window.open(
+                url,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+            // Alternativa si el navegador bloquea la ventana emergente
+            if (!ventana) {
+                window.location.href = url;
+            }
+        }
+
+        // Mostrar el carrito al cargar la página
+        mostrarCarrito();
+    </script>
+
+</body>
+</html>
+```

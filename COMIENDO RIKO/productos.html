@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos | Comiendo Riko</title>
+    
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/style.productos.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Comiendo Riko">
+                </a>
+            </div>
+
+
+            <!-- MENÚ -->
+            <nav class="nav">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="productos.html" class="active">
+                    Productos
+                </a>
+
+                <a href="monstruo.html">
+                    Monstruo del sabor
+                </a>
+
+                <a href="nosotros.html">Nosotros</a>
+                
+                <a href="index.html#contacto">
+                    Contacto
+                </a>
+
+            </nav>
+
+
+            <!-- BOTÓN -->
+            <a href="productos.html" class="header-button">
+                Ver menú
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="products-hero">
+
+        <div class="section-header">
+
+            <span>COMIENDO RIKO</span>
+
+            <h1>
+                NUESTROS PRODUCTOS
+            </h1>
+
+            <p>
+                Descubre nuestras hamburguesas, perros calientes
+                y especialidades preparadas para crear
+                el monstruo del sabor.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             PRESENTACIÓN DE PRODUCTOS
+             ================================================= -->
+
+        <section class="products section">
+
+            <div class="section-header">
+
+                <span>
+                    DESCUBRE NUESTRO SABOR
+                </span>
+
+                <h2>
+                    Elige tu favorito
+                </h2>
+
+                <p>
+                    Opciones preparadas para que disfrutes
+                    cada bocado de Comiendo Riko.
+                </p>
+
+            </div>
+
+
+            <div class="products-grid">
+
+
+                <!-- HAMBURGUESAS -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/hamburguesas.jfif"
+                            alt="Hamburguesas Comiendo Riko">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            HAMBURGUESAS
+                        </span>
+
+                        <h3>
+                            Hamburguesas Riko
+                        </h3>
+
+                        <p>
+                            Carne, ingredientes frescos y
+                            combinaciones llenas de sabor.
+                        </p>
+
+                        <a href="#hamburguesas" class="product-link">
+                            Ver hamburguesas →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PERROS -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/perros.png"
+                            alt="Perros calientes Comiendo Riko">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            PERROS CALIENTES
+                        </span>
+
+                        <h3>
+                            Perros Riko
+                        </h3>
+
+                        <p>
+                            Una opción clásica preparada
+                            con nuestro toque especial.
+                        </p>
+
+                        <a href="#perros" class="product-link">
+                            Ver perros →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ESPECIAL -->
+
+                <article class="product-card product-special">
+
+                    <div class="special-content">
+
+                        <span>
+                            ⭐ ESPECIAL DE LA CASA
+                        </span>
+
+                        <h3>
+                            La Legendaria
+                        </h3>
+
+                        <p>
+                            Una hamburguesa creada para
+                            quienes buscan algo diferente.
+                        </p>
+
+                        <a
+                            href="#hamburguesas"
+                            class="btn btn-yellow">
+
+                            Quiero probarla
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HAMBURGUESAS
+             ================================================= -->
+
+        <section id="hamburguesas" class="section product-category">
+
+            <div class="section-header">
+
+                <span>
+                    HAMBURGUESAS
+                </span>
+
+                <h2>
+                    Elige tu hamburguesa
+                </h2>
+
+                <p>
+                    Sabores únicos para los verdaderos amantes
+                    de las hamburguesas.
+                </p>
+
+            </div>
+
+
+            <div class="products-grid">
+
+
+                <!-- LA BESTIA BBQ -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/la-bestia-bbq.jfif"
+                            alt="La Bestia BBQ">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            HAMBURGUESA
+                        </span>
+
+                        <h3>
+                            La Bestia BBQ
+                        </h3>
+
+                        <p>
+                            Una hamburguesa llena de sabor,
+                            acompañada de nuestra deliciosa
+                            salsa BBQ.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong class="price">
+                                $17.000
+                            </strong>
+
+                            <button
+                                class="add-to-cart"
+                                onclick="agregarAlCarrito(
+                                    'La Bestia BBQ',
+                                    17.000,
+                                    'img/la-bestia-bbq.jfif',
+                                    'HAMBURGUESA',
+                                    'Hamburguesa con deliciosa salsa BBQ.'
+                                )">
+
+                                Pedir ahora →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LA BRUTA -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/la-bruta.jfif"
+                            alt="La Bruta con sabor">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            HAMBURGUESA
+                        </span>
+
+                        <h3>
+                            La Bruta con sabor
+                        </h3>
+
+                        <p>
+                            Una combinación poderosa para
+                            quienes quieren una experiencia
+                            llena de sabor.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong class="price">
+                                $16.000
+                            </strong>
+
+                            <button
+                                class="add-to-cart"
+                                onclick="agregarAlCarrito(
+                                    'La Bruta con sabor',
+                                    16000,
+                                    'img/la-bruta.jfif',
+                                    'HAMBURGUESA',
+                                    'Una combinación poderosa llena de sabor.'
+                                )">
+
+                                Pedir ahora →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LA LEGENDARIA -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/legendaria.png"
+                            alt="La Legendaria">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            ESPECIAL
+                        </span>
+
+                        <h3>
+                            La Legendaria
+                        </h3>
+
+                        <p>
+                            Nuestra creación especial para
+                            quienes buscan algo diferente.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong class="price">
+                                $20.000
+                            </strong>
+
+                            <button
+                                class="add-to-cart"
+                                onclick="agregarAlCarrito(
+                                    'La Legendaria',
+                                    20.000,
+                                    'img/legendaria.jfif',
+                                    'ESPECIAL',
+                                    'Nuestra hamburguesa especial de Comiendo Riko.'
+                                )">
+
+                                Pedir ahora →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PERROS CALIENTES
+             ================================================= -->
+
+        <section id="perros" class="section product-category">
+
+            <div class="section-header">
+
+                <span>
+                    PERROS CALIENTES
+                </span>
+
+                <h2>
+                    Nuestros perros
+                </h2>
+
+                <p>
+                    Una opción clásica con el toque
+                    especial de Comiendo Riko.
+                </p>
+
+            </div>
+
+
+            <div class="products-grid">
+
+
+                <!-- EL EXPLOSIVO -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/explosivo.jfif"
+                            alt="El Explosivo">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            PERRO CALIENTE
+                        </span>
+
+                        <h3>
+                            El Explosivo
+                        </h3>
+
+                        <p>
+                            Un perro caliente cargado
+                            de sabor y preparado al estilo
+                            Comiendo Riko.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong class="price">
+                                $15.000
+                            </strong>
+
+                            <button
+                                class="add-to-cart"
+                                onclick="agregarAlCarrito(
+                                    'El Explosivo',
+                                    15000,
+                                    'img/explosivo.jfif',
+                                    'PERRO CALIENTE',
+                                    'Perro caliente cargado de sabor.'
+                                )">
+
+                                Pedir ahora →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- EL TODO TERRENO -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/todoterreno.jfif"
+                            alt="El Todo Terreno">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            PERRO CALIENTE
+                        </span>
+
+                        <h3>
+                            El Todo Terreno
+                        </h3>
+
+                        <p>
+                            Una combinación deliciosa
+                            para disfrutar en cualquier
+                            momento.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong class="price">
+                                $16.500
+                            </strong>
+
+                            <button
+                                class="add-to-cart"
+                                onclick="agregarAlCarrito(
+                                    'El Todo Terreno',
+                                    16.500,
+                                    'img/todoterreno.jfif',
+                                    'PERRO CALIENTE',
+                                    'Una combinación deliciosa para cualquier momento.'
+                                )">
+
+                                Pedir ahora →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- EL PODEROSO -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="img/poderoso.jfif"
+                            alt="El Poderoso">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            ESPECIAL
+                        </span>
+
+                        <h3>
+                            El Poderoso
+                        </h3>
+
+                        <p>
+                            Una preparación especial para
+                            los que quieren probar algo
+                            diferente.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong class="price">
+                                $18.000
+                            </strong>
+
+                            <button
+                                class="add-to-cart"
+                                onclick="agregarAlCarrito(
+                                    'El Poderoso',
+                                    18.000,
+                                    'img/poderoso.jfif',
+                                    'ESPECIAL',
+                                    'Una preparación especial de Comiendo Riko.'
+                                )">
+
+                                Pedir ahora →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CREA TU HAMBURGUESA
+             ================================================= -->
+
+        <section id="crea" class="section create-section">
+
+            <div class="section-header">
+
+                <span>
+                    CREA TU PROPIA COMBINACIÓN
+                </span>
+
+                <h2>
+                    Tú creas el monstruo del sabor
+                </h2>
+
+                <p>
+                    Elige tus ingredientes, combina tus sabores
+                    y crea una hamburguesa hecha a tu manera.
+                </p>
+
+                <a
+                    href="monstruo.html"
+                    class="btn btn-yellow">
+
+                    Crear mi hamburguesa →
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACTO / PEDIDO
+             ================================================= -->
+
+        <section id="contacto" class="section order-section">
+
+            <div class="section-header">
+
+                <span>
+                    ¿YA ELEGISTE?
+                </span>
+
+                <h2>
+                    ¡Haz tu pedido!
+                </h2>
+
+                <p>
+                    Agrega tus productos al carrito y
+                    disfruta de Comiendo Riko.
+                </p>
+
+                <a
+                    href="carrito.html"
+                    class="btn btn-yellow">
+
+                    Ver mi pedido →
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Comiendo Riko.
+                Todos los derechos reservados.
+            </p>
+
+            <a href="index.html">
+                Volver al inicio ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         CARRITO
+         ===================================================== -->
+
+    <script>
+
+        function agregarAlCarrito(
+            nombre,
+            precio,
+            imagen,
+            categoria,
+            descripcion
+        ) {
+
+            let carrito = JSON.parse(
+                localStorage.getItem("carritoComiendoRiko")
+            ) || [];
+
+
+            const productoExistente =
+                carrito.find(
+                    producto => producto.nombre === nombre
+                );
+
+
+            if (productoExistente) {
+
+                productoExistente.cantidad += 1;
+
+            } else {
+
+                carrito.push({
+
+                    nombre: nombre,
+
+                    precio: precio,
+
+                    imagen: imagen,
+
+                    categoria: categoria,
+
+                    descripcion: descripcion,
+
+                    cantidad: 1
+
+                });
+
+            }
+
+
+            localStorage.setItem(
+                "carritoComiendoRiko",
+                JSON.stringify(carrito)
+            );
+
+
+            window.location.href = "carrito.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

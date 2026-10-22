@@ -1,0 +1,888 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111111;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+    width: 100%;
+    height: 76px;
+
+    background: #111111;
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.header .container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+
+.logo img {
+    width: 85px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =====================================================
+   MENÚ
+   ===================================================== */
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #ffcc00;
+}
+
+.nav a.active {
+    color: #ffcc00;
+}
+
+
+/* =====================================================
+   BOTÓN DEL HEADER
+   ===================================================== */
+
+.header-button {
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    background: #ffcc00;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.header-button:hover {
+    background: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO PRODUCTOS
+   ===================================================== */
+
+.products-hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111 0%,
+            #111111 65%,
+            #e60000 65%,
+            #e60000 100%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* CÍRCULO AMARILLO */
+
+.products-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: #ffbf00;
+
+    border-radius: 50%;
+
+    right: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    opacity: 0.95;
+}
+
+
+/* CONTENIDO HERO */
+
+.products-hero .section-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.products-hero span {
+    color: #ffcc00;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.products-hero h1 {
+    color: #ffffff;
+
+    font-size: 55px;
+
+    line-height: 1.05;
+
+    margin: 15px 0;
+
+    font-weight: 900;
+}
+
+.products-hero p {
+    color: #dddddd;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   SECCIONES
+   ===================================================== */
+
+.section {
+    padding: 90px 7%;
+
+    background: #111111;
+}
+
+.section-header {
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-header span {
+    color: #ffcc00;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-header h2 {
+    color: #ffffff;
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    margin: 12px 0;
+
+    font-weight: 900;
+}
+
+.section-header p {
+    color: #bdbdbd;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CATEGORÍAS DE PRODUCTOS
+   ===================================================== */
+
+.product-category {
+    border-top: 1px solid #1e1e1e;
+}
+
+
+/* =====================================================
+   GRID DE PRODUCTOS
+   ===================================================== */
+
+.products-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   TARJETAS
+   ===================================================== */
+
+.product-card {
+    background: #1a1a1a;
+
+    border: 1px solid #292929;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #ffcc00;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =====================================================
+   IMÁGENES
+   ===================================================== */
+
+.product-image {
+    width: 100%;
+
+    height: 260px;
+
+    background: #222222;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   INFORMACIÓN DEL PRODUCTO
+   ===================================================== */
+
+.product-info {
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.product-info span {
+    color: #ffcc00;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.product-info h3 {
+    color: #ffffff;
+
+    font-size: 25px;
+
+    margin: 10px 0;
+
+    font-weight: 900;
+}
+
+.product-info p {
+    color: #bdbdbd;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   ENLACES DE CATEGORÍAS
+   ===================================================== */
+
+.product-link {
+    color: #ffcc00;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+
+    margin-top: auto;
+}
+
+.product-link:hover {
+    color: #ffffff;
+
+    padding-left: 5px;
+}
+
+
+/* =====================================================
+   PRECIO + BOTÓN
+   ===================================================== */
+
+.product-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: auto;
+
+    padding-top: 10px;
+}
+
+.price {
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   BOTÓN PEDIR AHORA
+   ===================================================== */
+
+.add-to-cart {
+    border: none;
+
+    background: transparent;
+
+    color: #ffcc00;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    color: #ffffff;
+
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   PRODUCTO ESPECIAL
+   ===================================================== */
+
+.product-special {
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e60000,
+            #a80000
+        );
+
+    border: none;
+}
+
+.product-special:hover {
+    border-color: transparent;
+}
+
+.special-content {
+    max-width: 380px;
+}
+
+.special-content span {
+    color: #ffcc00;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.special-content h3 {
+    color: #ffffff;
+
+    font-size: 38px;
+
+    margin: 15px 0;
+}
+
+.special-content p {
+    color: #ffffff;
+
+    line-height: 1.7;
+
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   BOTONES GENERALES
+   ===================================================== */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.btn-yellow {
+    background: #ffcc00;
+
+    color: #111111 !important;
+}
+
+.btn-yellow:hover {
+    background: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   CREA TU HAMBURGUESA
+   ===================================================== */
+
+.create-section {
+    background:
+        linear-gradient(
+            135deg,
+            #e60000,
+            #a80000
+        );
+
+    text-align: center;
+}
+
+.create-section .section-header {
+    margin-bottom: 0;
+}
+
+.create-section .section-header span {
+    color: #ffcc00;
+}
+
+.create-section .section-header h2 {
+    color: #ffffff;
+
+    font-size: 45px;
+}
+
+.create-section .section-header p {
+    color: #ffffff;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   CONTACTO / PEDIDO
+   ===================================================== */
+
+.order-section {
+    background: #111111;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: #080808;
+
+    padding: 35px 7%;
+
+    border-top: 1px solid #222222;
+}
+
+footer .container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+footer p {
+    color: #777777;
+}
+
+footer a {
+    color: #ffcc00;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-hero h1 {
+        font-size: 45px;
+    }
+
+    .products-hero::after {
+        width: 280px;
+        height: 280px;
+
+        right: -80px;
+    }
+
+    .nav {
+        gap: 18px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .header-button {
+        padding: 11px 15px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    .header {
+        height: auto;
+
+        padding: 15px 0;
+    }
+
+    .header .container {
+        width: 90%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    /* LOGO */
+
+    .logo img {
+        width: 75px;
+    }
+
+
+    /* MENÚ */
+
+    .nav {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+
+    /* BOTÓN HEADER */
+
+    .header-button {
+        padding: 11px 18px;
+
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .products-hero {
+        min-height: 350px;
+
+        padding: 60px 20px;
+
+        background: #111111;
+    }
+
+    .products-hero::after {
+        width: 220px;
+        height: 220px;
+
+        right: -100px;
+
+        opacity: 0.6;
+    }
+
+    .products-hero h1 {
+        font-size: 36px;
+    }
+
+    .products-hero p {
+        font-size: 15px;
+    }
+
+
+    /* SECCIONES */
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .section-header p {
+        font-size: 15px;
+    }
+
+
+    /* GRID */
+
+    .products-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    /* IMÁGENES */
+
+    .product-image {
+        height: 240px;
+    }
+
+
+    /* TARJETAS */
+
+    .product-info {
+        padding: 24px;
+    }
+
+    .product-info h3 {
+        font-size: 23px;
+    }
+
+
+    /* PRECIO Y BOTÓN */
+
+    .product-bottom {
+        align-items: center;
+    }
+
+    .price {
+        font-size: 19px;
+    }
+
+    .add-to-cart {
+        font-size: 14px;
+    }
+
+
+    /* ESPECIAL */
+
+    .product-special {
+        min-height: 350px;
+    }
+
+    .special-content h3 {
+        font-size: 32px;
+    }
+
+
+    /* CREA */
+
+    .create-section .section-header h2 {
+        font-size: 34px;
+    }
+
+
+    /* FOOTER */
+
+    footer .container {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}
